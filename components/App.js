@@ -27,7 +27,7 @@ const App = ({ children, pathname }) => (
     `}</style>
 
     <h1><Logo style={{ height: '1.45rem' }}/> Next.js on Heroku - {Case.pascal(pathname)}</h1>
-    <p><Link href='/' >Home</Link> <Link href='/about' >About</Link> <Link href='/contact' >Contact</Link></p>
+    <p><Link href='/' ><a>Home</a></Link> <Link href='/about' ><a>About</a></Link> <Link href='/contact' ><a>Contact</a></Link></p>
     {children}
   </div>
 )
