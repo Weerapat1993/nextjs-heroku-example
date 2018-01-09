@@ -33,4 +33,13 @@ const App = ({ children, pathname }) => (
   </div>
 )
 
+App.getInitialProps = async (props) => {
+  const { pathname, query } = props
+  console.log(props)
+  return {
+    pathname,
+    query
+  }
+}
+
 export default App
