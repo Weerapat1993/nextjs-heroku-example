@@ -22,8 +22,7 @@ class Home extends React.Component {
 			<App>
 				<Fork stars={stars} />
 				<div>
-          <h1>Home</h1>
-					<Todo />
+					<Todo title='Home' />  
 				</div>
 			</App>
 		)

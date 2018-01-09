@@ -22,8 +22,7 @@ class Contact extends React.Component {
 			<App>
 				<Fork stars={stars} />
 				<div>
-          <h1>Contact</h1>
-          <Todo />
+          <Todo title='Contact' />  
 				</div>
 			</App>
 		)

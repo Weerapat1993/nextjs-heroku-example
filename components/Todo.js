@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import Link from 'next/link'
 import { todoActions } from '../redux/todo'
 import TodoItem from './TodoItem'
 
@@ -20,8 +21,12 @@ class Todo extends React.Component {
 	}
 
 	render() {
+		const { title } = this.props
 		return (
 			<div className="mdl-card mdl-shadow--2dp">
+				<div className='mdl-card__title'>
+					{title}
+				</div>
 				<form onSubmit={this.addTodos}>
 					<div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 						<input
@@ -71,6 +76,23 @@ class Todo extends React.Component {
 							transform: translateY(100px);
 						}
 					`}</style>
+				<div class="mdl-card__actions">
+					<Link href='/' >
+						<button className="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+							Home
+						</button>
+					</Link>
+					<Link href='/about' >
+						<button className="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+							About
+						</button>
+					</Link>
+					<Link href='/contact' >
+						<button className="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+							Contact
+						</button>
+					</Link>
+				</div>
 			</div>
 		)
 	}

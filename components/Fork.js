@@ -7,11 +7,18 @@ const Fork = ({ stars }) => (
 			data-badge={stars || 0}
 		>
 			<a href="https://github.com/ooade/NextSimpleStarter">
-				<button className="mdl-js-button mdl-button--raised mdl-button--colored">
-					Fork me ({stars || 0})
+				<button className="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+					Fork me
 				</button>
 			</a>
 		</div>
+		<style>{`
+			.mdl-badge {
+				position: absolute;
+				top: 30px;
+				right: 15px;
+			}
+		  `}</style>
 	</div>
 )
 

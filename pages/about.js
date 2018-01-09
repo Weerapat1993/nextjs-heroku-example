@@ -22,8 +22,7 @@ class About extends React.Component {
 			<App>
 				<Fork stars={stars} />
 				<div>
-					<h1>About</h1>
-          <Todo />  
+          <Todo title='About' />  
 				</div>
 			</App>
 		)
