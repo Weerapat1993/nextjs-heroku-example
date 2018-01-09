@@ -2,7 +2,7 @@ import axios from 'axios'
 import React from 'react'
 import { connect } from 'react-redux'
 import withRedux from 'next-redux-wrapper'
-import { App, Fork } from '../components'
+import { App, Fork, Todo } from '../components'
 import configureStore from '../redux/store'
 import { todoActions } from '../redux/todo'
 
@@ -23,6 +23,7 @@ class Contact extends React.Component {
 				<Fork stars={stars} />
 				<div>
           <h1>Contact</h1>
+          <Todo />
 				</div>
 			</App>
 		)
