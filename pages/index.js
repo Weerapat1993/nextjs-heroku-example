@@ -1,13 +1,33 @@
+import axios from 'axios'
 import React from 'react'
-import Head from 'next/head'
-import Link from 'next/link'
-import { App } from '../components'
+import { connect } from 'react-redux'
+import withRedux from 'next-redux-wrapper'
+import { App, Fork, Todo } from '../components'
+import configureStore from '../redux/store'
+import { todoActions } from '../redux/todo'
 
-export default () => (
-  <App>
-    <p>Deploy <a href="https://zeit.co/blog/next">Next.js</a> universal web apps on <a href="https://www.heroku.com/home">Heroku</a>.</p>
-    <p>This <strong>demo deployment on Heroku</strong> is from the repo <a href="https://github.com/mars/heroku-nextjs">mars/heroku-nextjs</a>.</p>
-    <p><Link href='/' >Home</Link> <Link href='/about' >About</Link> <Link href='/contact' >Contact</Link></p>
-    <p><a href="https://github.com/mars/heroku-nextjs/archive/master.zip">Download this Next.js app</a> as a Heroku-ready template, or follow <a href="https://github.com/mars/heroku-nextjs#production-deployment">Production Deployment</a> to push an existing app to Heroku.</p>
-  </App>
-)
+class Home extends React.Component {
+  static async getInitialProps({ store }) {
+    if(!store.getState().todo.star) {
+      await store.dispatch(todoActions.getStar())
+    }
+    return { 
+      stars: store.getState().todo.star
+    }
+	}
+
+	render() {
+		const { stars } = this.props
+		return (
+			<App>
+				<Fork stars={stars} />
+				<div>
+          <h1>Home</h1>
+					<Todo />
+				</div>
+			</App>
+		)
+	}
+}
+
+export default withRedux(configureStore)(Home)

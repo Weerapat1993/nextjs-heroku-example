@@ -3,7 +3,6 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Case from 'case'
 import Logo from '../components/logo'
-import { Button } from '../src/views/components'
 
 const App = ({ children, pathname }) => (
   <div className="root">
@@ -28,14 +27,13 @@ const App = ({ children, pathname }) => (
     `}</style>
 
     <h1><Logo style={{ height: '1.45rem' }}/> Next.js on Heroku - {Case.pascal(pathname)}</h1>
-    <Button />
+    <p><Link href='/' >Home</Link> <Link href='/about' >About</Link> <Link href='/contact' >Contact</Link></p>
     {children}
   </div>
 )
 
 App.getInitialProps = async (props) => {
   const { pathname, query } = props
-  console.log(props)
   return {
     pathname,
     query
