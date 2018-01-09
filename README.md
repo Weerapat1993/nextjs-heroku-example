@@ -58,4 +58,3 @@ Once you have a [Next app working locally](https://github.com/zeit/next.js#how-t
    git push heroku master
    ```
 1. ♻️ Deploy changes: add, commit, & push again.
-
