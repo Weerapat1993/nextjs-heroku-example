@@ -8,7 +8,7 @@ import { nextStore } from '../utils'
 class About extends React.Component {
   static async getInitialProps({ store }) {
 		const { dispatch, getState } = store
-		// mapDispatchToProps
+		// componentDidMount
     if(!nextStore(getState).todo.star) {
       await dispatch(todoActions.getStar())
 		}
