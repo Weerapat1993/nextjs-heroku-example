@@ -1,18 +1,20 @@
-import axios from 'axios'
 import React from 'react'
-import { connect } from 'react-redux'
 import withRedux from 'next-redux-wrapper'
 import { App, Fork, Todo } from '../components'
 import configureStore from '../redux/store'
 import { todoActions } from '../redux/todo'
+import { nextStore } from '../utils'
 
 class Contact extends React.Component {
   static async getInitialProps({ store }) {
-    if(!store.getState().todo.star) {
-      await store.dispatch(todoActions.getStar())
-    }
+		const { dispatch, getState } = store
+		// mapDispatchToProps
+    if(!nextStore(getState).todo.star) {
+      await dispatch(todoActions.getStar())
+		}
+		// mapStateToProps
     return { 
-      stars: store.getState().todo.star
+      stars: nextStore(getState).todo.star,
     }
 	}
 

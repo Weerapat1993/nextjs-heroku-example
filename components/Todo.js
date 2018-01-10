@@ -76,7 +76,7 @@ class Todo extends React.Component {
 							transform: translateY(100px);
 						}
 					`}</style>
-				<div class="mdl-card__actions">
+				<div className="mdl-card__actions">
 					<Link href='/' >
 						<button className="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
 							Home

@@ -19,6 +19,11 @@ export default class MyDocument extends Document {
 					<title>Todo App</title>
 				</Head>
 				<body>
+					<div>
+						<center>
+							<h4>{process.env.NODE_ENV}</h4>	
+						</center>
+					</div>
 					<Main />
 					<NextScript />
 					<script defer src="https://code.getmdl.io/1.3.0/material.min.js" />

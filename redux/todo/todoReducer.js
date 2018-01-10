@@ -10,7 +10,7 @@ export const initialState = {
  * Todo Reducer
  * @param {*} state 
  * @param {{ type: string, data: [], error: string }} action 
- * @return {initalState}
+ * @return {initialState}
  */
 export const todoReducer = (state = initialState, action) => {
   switch (action.type) {
