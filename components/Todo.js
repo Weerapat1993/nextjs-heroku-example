@@ -9,6 +9,11 @@ class Todo extends React.Component {
 		text: ''
 	}
 
+	componentDidMount () {
+		this.props.addTodo('Its works')
+	}
+	
+
 	addTodos = e => {
 		e.preventDefault()
 
