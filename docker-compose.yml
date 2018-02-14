@@ -9,4 +9,7 @@ web:
   ports:
     - '8888:8000'
 db:
+  container_name: mongodb-nextjs
   image: mongo
+  ports:
+    - '27017:27017'
