@@ -82,17 +82,17 @@ class Todo extends React.Component {
 						}
 					`}</style>
 				<div className="mdl-card__actions">
-					<Link href='/' >
+					<Link href='/' as={process.env.BACKEND_URL + '/'} >
 						<button className="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
 							Home
 						</button>
 					</Link>
-					<Link href='/about' >
+					<Link href='/about' as={process.env.BACKEND_URL + '/about'} >
 						<button className="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
 							About
 						</button>
 					</Link>
-					<Link href='/contact' >
+					<Link href='/contact' as={process.env.BACKEND_URL + '/contact'} >
 						<button className="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
 							Contact
 						</button>
