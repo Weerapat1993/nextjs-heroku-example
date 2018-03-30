@@ -62,6 +62,5 @@
   },
   "eslintConfig": {
     "extends": "react-app"
-  },
-  "homepage": "https://weerapat1993.github.io/nextjs-heroku-example"
+  }
 }

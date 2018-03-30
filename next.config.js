@@ -8,5 +8,25 @@ module.exports = {
       "/contact": { page: "/contact" },
     }
   },
-  assetPrefix: !debug ? 'https://weerapat1993.github.io/next-js-heroku-example/' : '',
+  assetPrefix: !debug ? '/next-js-heroku-example/' : '',
+  webpack: (config, { dev }) => {
+    // Perform customizations to webpack config
+    // console.log('webpack');
+    // console.log(config.module.rules, dev);
+    config.module.rules = config.module.rules.map(rule => {
+      if(rule.loader === 'babel-loader') {
+        rule.options.cacheDirectory = false
+      }
+      return rule
+    })
+    // Important: return the modified config
+    return config
+  }/*,
+  webpackDevMiddleware: (config) => {
+    // Perform customizations to webpack dev middleware config
+    // console.log('webpackDevMiddleware');
+    // console.log(config);
+    // Important: return the modified config
+    return config
+  }, */
 }
